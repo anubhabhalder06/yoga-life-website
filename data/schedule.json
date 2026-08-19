@@ -1,0 +1,31 @@
+﻿{
+  "_comment": "Edit this file to update class timings and fees.",
+  "offline": {
+    "label": "Offline (In-Studio)",
+    "registrationFee": 250,
+    "plans": [
+      { "label": "5 Days / Week", "price": 450, "period": "month" },
+      { "label": "3 Days / Week", "price": 250, "period": "month" }
+    ],
+    "slots": [
+      { "time": "6:00 – 7:00 am", "days": "Mon – Fri" },
+      { "time": "7:30 – 8:30 am", "days": "Mon – Fri" },
+      { "time": "4:30 – 5:30 pm", "days": "Mon – Sat" },
+      { "time": "5:40 – 6:40 pm", "days": "Mon – Sat" },
+      { "time": "7:30 – 8:30 pm", "days": "Mon – Sat" }
+    ]
+  },
+  "online": {
+    "label": "Online (Live)",
+    "registrationFee": 250,
+    "plans": [
+      { "label": "Monthly", "price": 500, "period": "month" },
+      { "label": "3-Month Special", "price": 1300, "period": "3 months", "savings": "Save Rs.200" }
+    ],
+    "slots": [
+      { "time": "6:00 – 7:00 am", "days": "Mon – Fri" },
+      { "time": "7:30 – 8:30 am", "days": "Mon – Fri" },
+      { "time": "7:30 – 8:30 pm", "days": "Mon, Thu, Sat" }
+    ]
+  }
+}
