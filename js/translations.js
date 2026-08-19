@@ -88,7 +88,7 @@ const TRANSLATIONS = {
     "social.label": "Follow Our Journey",
 
     // FOOTER
-    "footer.desc": "A premium yoga & Zumba studio in Baruipur, Kolkata. Transforming lives through movement since 2012.",
+    "footer.desc": "A premium yoga & Zumba studio in Baruipur, Kolkata. Transforming lives through movement since 2024.",
     "footer.nav":  "Navigation",
     "footer.contact": "Contact",
     "footer.hours":   "Studio Hours",
@@ -278,7 +278,7 @@ const TRANSLATIONS = {
     "social.label": "আমাদের যাত্রা অনুসরণ করুন",
 
     // FOOTER
-    "footer.desc": "বারুইপুর, কলকাতায় একটি প্রিমিয়াম যোগ ও জুম্বা স্টুডিও। ২০১২ সাল থেকে আন্দোলনের মাধ্যমে জীবন রূপান্তরিত করছে।",
+    "footer.desc": "বারুইপুর, কলকাতায় একটি প্রিমিয়াম যোগ ও জুম্বা স্টুডিও। ২০২৪ সাল থেকে যোগাভ্যাসের মাধ্যমে জীবন রূপান্তরিত করছে।",
     "footer.nav":  "নেভিগেশন",
     "footer.contact": "যোগাযোগ",
     "footer.hours":   "স্টুডিওর সময়",
