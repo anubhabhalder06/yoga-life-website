@@ -22,7 +22,7 @@
   --ease-sharp:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition:  200ms var(--ease-sharp);
   --max-w: 1200px;
-  --nav-h: 74px;
+  --nav-h: 88px;
   --r-sm:  12px;
   --r-md:  20px;
   --r-lg:  28px;
@@ -85,7 +85,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
   display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
 }
 
-.nav-logo img { height: 54px; width: auto; display: block; }
+.nav-logo img { height: 68px; width: auto; display: block; }
 
 /* Nav links â€” always dark (visible on frosted glass) */
 .nav-links { display: none; list-style: none; gap: 0.15rem; }
@@ -409,7 +409,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 /* ===== FOOTER ===== */
 .site-footer { background: var(--charcoal); color: rgba(250,248,244,0.55); padding: 3rem 1.1rem 1.75rem; }
 .footer-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
-.footer-logo img { height: 44px; margin-bottom: 0.85rem; filter: brightness(0) invert(1); opacity: 0.88; }
+.footer-logo img { height: 60px; margin-bottom: 0.85rem; filter: brightness(0) invert(1); opacity: 0.88; }
 .footer-desc { font-size: 0.82rem; line-height: 1.7; max-width: 26ch; }
 .footer-col h4 { font-family: var(--font-body); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--off-white); margin-bottom: 0.85rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
