@@ -1,4 +1,4 @@
-/* translations.js — EN / BN dictionary */
+/* translations.js, EN / BN dictionary */
 const TRANSLATIONS = {
   en: {
     // NAV
@@ -97,12 +97,12 @@ const TRANSLATIONS = {
     "footer.rating": "<span style=\"font-weight:700;\">5.0<span style=\"font-size:0.75em; margin:0 4px 0 2px; position:relative; top:-1px;\">&#9733;</span></span> 40 Google Reviews",
     "footer.copy":   "© 2025 Yoga Life. All rights reserved.",
 
-    // PAGES — CLASSES
+    // PAGES, CLASSES
     "cp.label": "Our Programs",
     "cp.h1":    "Classes",
     "cp.sub":   "Offline & online classes for all ages and levels in Baruipur.",
     "cp.yoga.label": "Yoga Program",
-    "cp.yoga.h2":    "Yoga — Body, Breath & Balance",
+    "cp.yoga.h2":    "Yoga - Body, Breath & Balance",
     "cp.yoga.p1":    "Our yoga classes cater to all levels, blending postures, breathwork (Pranayama), and mindfulness.",
     "cp.yoga.p2":    "Led by qualified instructor Mrs. Runu Halder Das, each session offers a supportive environment to deepen your practice.",
     "cp.yoga.b1":    "Suitable for all ages, including 50+",
@@ -111,11 +111,11 @@ const TRANSLATIONS = {
     "cp.yoga.b4":    "Weight management & stress relief",
     "cp.yoga.b5":    "Available offline & online",
     "cp.zumba.label": "Zumba Program",
-    "cp.zumba.h2":    "Zumba — Dance, Fitness & Joy",
+    "cp.zumba.h2":   "Zumba - Dance, Fitness & Joy",
     "cp.zumba.p1":    "Experience high-energy Zumba dance fitness! Burn calories, improve coordination, and lift your mood in a fun, party-like atmosphere.",
-    "cp.zumba.p2":    "No experience needed—just bring your energy. A single class leaves you energised for the whole day.",
+    "cp.zumba.p2":    "No experience needed, just bring your energy. A single class leaves you energised for the whole day.",
     "cp.zumba.b1":    "High-energy cardio that doesn't feel like exercise",
-    "cp.zumba.b2":    "Dance fitness for all levels — no experience needed",
+    "cp.zumba.b2":    "Dance fitness for all levels, no experience needed",
     "cp.zumba.b3":    "Burn calories & improve coordination",
     "cp.zumba.b4":    "Mood-lifting community experience",
     "cp.zumba.b5":    "Available offline only",
@@ -123,7 +123,7 @@ const TRANSLATIONS = {
     "cp.sched.h2":    "Schedules",
     "cp.join.cta":    "Join Now",
 
-    // PAGES — ABOUT
+    // PAGES, ABOUT
     "ap.label": "About Us",
     "ap.h1":    "Mrs. Runu Halder Das",
     "ap.sub":   "Qualified yoga trainer · Baruipur, Kolkata",
@@ -144,12 +144,12 @@ const TRANSLATIONS = {
     "ap.qual.5.title": "Online & Offline",
     "ap.qual.5.desc":  "Offers live online classes alongside in-studio sessions",
     "ap.qual.6.title": "5.0★ Rated Studio",
-    "ap.qual.6.desc":  "40 Google Reviews — consistently five-star rated",
+    "ap.qual.6.desc":  "40 Google Reviews, consistently five-star rated",
 
-    // PAGES — JOIN
+    // PAGES, JOIN
     "jp.label": "Enrollment",
     "jp.h1":    "Join Yoga Life",
-    "jp.sub":   "Enroll in minutes — no waiting, no complicated process.",
+    "jp.sub":   "Enroll in minutes, no waiting, no complicated process.",
     "jp.intro": "Here's how it works:",
     "jp.step1.h": "Choose your class & slot",
     "jp.step1.p": "Offline (in-studio) or Online (live). Pick from available time slots listed in the form.",
@@ -164,7 +164,7 @@ const TRANSLATIONS = {
     "jp.alt.wa": "WhatsApp Us",
     "jp.alt.call": "Call Us",
 
-    // PAGES — CONTACT
+    // PAGES, CONTACT
     "co.label":   "Get in Touch",
     "co.h1":      "Contact",
     "co.sub":     "We'd love to hear from you. Visit the studio or reach out anytime.",
@@ -187,7 +187,7 @@ const TRANSLATIONS = {
     // BLOG
     "blog.label": "Blog",
     "blog.h1":    "Insights & Inspiration",
-    "blog.p":     "Articles on yoga, wellness, and mindful living — coming soon.",
+    "blog.p":     "Articles on yoga, wellness, and mindful living, coming soon.",
     "blog.tag":   "Coming Soon",
   },
   bn: {
@@ -226,7 +226,7 @@ const TRANSLATIONS = {
     "about.label":   "স্টুডিও সম্পর্কে",
     "about.h2":      "যেখানে অনুশীলন মিলে উদ্দেশ্যের সাথে",
     "about.p1":      "ইয়োগা লাইফ বারুইপুরের সবচেয়ে বিশ্বস্ত যোগ ও জুম্বা স্টুডিও। তিন বছরেরও বেশি অভিজ্ঞতাসম্পন্ন যোগ্য প্রশিক্ষক শ্রীমতী রুণু হালদার দাসের তত্ত্বাবধানে ৫০০-এরও বেশি শিক্ষার্থী এখানে শক্তি, স্থিরতা এবং সম্প্রদায় খুঁজে পেয়েছেন।",
-    "about.p2":      "আমরা অফলাইন এবং অনলাইন লাইভ ক্লাস উভয়ই অফার করি — প্রতিটি বয়স ও স্তরের জন্য ডিজাইন করা হয়েছে। আপনি সবে শুরু করছেন বা আপনি একজন অভিজ্ঞ যোগী হোন না কেন, এখানে আপনার জন্য একটি স্থান রয়েছে।",
+    "about.p2":      "আমরা অফলাইন এবং অনলাইন লাইভ ক্লাস উভয়ই অফার করি, প্রতিটি বয়স ও স্তরের জন্য ডিজাইন করা হয়েছে। আপনি সবে শুরু করছেন বা আপনি একজন অভিজ্ঞ যোগী হোন না কেন, এখানে আপনার জন্য একটি স্থান রয়েছে।",
     "about.link":    "আমাদের গল্প",
     "about.badge.num": "৫০০+",
     "about.badge.txt": "জীবন পরিবর্তিত",
@@ -287,21 +287,21 @@ const TRANSLATIONS = {
     "footer.rating": "<span style=\"font-weight:700;\">৫.০<span style=\"font-size:0.75em; margin:0 4px 0 2px; position:relative; top:-1px;\">&#9733;</span></span> ৪০টি গুগল রিভিউ",
     "footer.copy":   "© ২০২৫ ইয়োগা লাইফ। সর্বস্বত্ব সংরক্ষিত।",
 
-    // PAGES — CLASSES
+    // PAGES, CLASSES
     "cp.label": "আমাদের প্রোগ্রাম",
     "cp.h1":    "ক্লাস",
     "cp.sub":   "বারুইপুরে সব বয়স ও স্তরের জন্য অফলাইন ও অনলাইন ক্লাস।",
     "cp.yoga.label": "যোগ প্রোগ্রাম",
-    "cp.yoga.h2":    "যোগ — শরীর, শ্বাস ও ভারসাম্য",
-    "cp.yoga.p1":    "আমাদের যোগ সেশনগুলি সমস্ত স্তরের অনুশীলনকারীদের জন্য — প্রথমবার মাদুরে পা দেওয়া থেকে গভীর অনুশীলন খোঁজা পর্যন্ত।",
-    "cp.yoga.p2":    "সমস্ত সেশন শ্রীমতী রুণু হালদার দাস পরিচালনা করেন — একটি সহায়ক ও বিচারমুক্ত পরিবেশে।",
+    "cp.yoga.h2":    "যোগ - শরীর, শ্বাস ও ভারসাম্য",
+    "cp.yoga.p1":    "আমাদের যোগ সেশনগুলি সমস্ত স্তরের অনুশীলনকারীদের জন্য, প্রথমবার মাদুরে পা দেওয়া থেকে গভীর অনুশীলন খোঁজা পর্যন্ত।",
+    "cp.yoga.p2":    "সমস্ত সেশন শ্রীমতী রুণু হালদার দাস পরিচালনা করেন, একটি সহায়ক ও বিচারমুক্ত পরিবেশে।",
     "cp.yoga.b1":    "সব বয়সের জন্য উপযুক্ত, ৫০+ সহ",
     "cp.yoga.b2":    "হঠযোগ, নমনীয়তা ও শক্তি কাজ",
     "cp.yoga.b3":    "প্রাণায়াম ও মেডিটেশন কৌশল",
     "cp.yoga.b4":    "ওজন ব্যবস্থাপনা ও স্ট্রেস উপশম",
     "cp.yoga.b5":    "অফলাইন ও অনলাইন উভয়ই উপলব্ধ",
     "cp.zumba.label": "জুম্বা প্রোগ্রাম",
-    "cp.zumba.h2":    "জুম্বা — নাচ, ফিটনেস ও আনন্দ",
+    "cp.zumba.h2":   "জুম্বা - নাচ, ফিটনেস ও আনন্দ",
     "cp.zumba.p1":    "ইয়োগা লাইফে জুম্বা উচ্চ-শক্তির, আনন্দদায়ক এবং সত্যিকারের মজাদার।",
     "cp.zumba.p2":    "আমাদের জুম্বা সেশন ক্যালোরি পোড়ায়, সমন্বয় উন্নত করে, মেজাজ উন্নত করে এবং সম্প্রদায় গড়ে তোলে।",
     "cp.zumba.b1":    "উচ্চ-শক্তির কার্ডিও যা ব্যায়ামের মতো মনে হয় না",
@@ -313,7 +313,7 @@ const TRANSLATIONS = {
     "cp.sched.h2":    "সময়সূচী",
     "cp.join.cta":    "যোগ দিন",
 
-    // PAGES — ABOUT
+    // PAGES, ABOUT
     "ap.label": "আমাদের সম্পর্কে",
     "ap.h1":    "শ্রীমতী রুণু হালদার দাস",
     "ap.sub":   "যোগ্য যোগ প্রশিক্ষক · বারুইপুর, কলকাতা",
@@ -334,12 +334,12 @@ const TRANSLATIONS = {
     "ap.qual.5.title": "অনলাইন ও অফলাইন",
     "ap.qual.5.desc":  "ইন-স্টুডিও সেশনের পাশাপাশি লাইভ অনলাইন ক্লাস",
     "ap.qual.6.title": "৫.০★ রেটেড স্টুডিও",
-    "ap.qual.6.desc":  "৪০টি গুগল রিভিউ — ধারাবাহিকভাবে পাঁচ তারা রেটেড",
+    "ap.qual.6.desc":  "৪০টি গুগল রিভিউ, ধারাবাহিকভাবে পাঁচ তারা রেটেড",
 
-    // PAGES — JOIN
+    // PAGES, JOIN
     "jp.label": "ভর্তি",
     "jp.h1":    "ইয়োগা লাইফে যোগ দিন",
-    "jp.sub":   "মিনিটের মধ্যে ভর্তি হন — কোনো অপেক্ষা নেই, কোনো জটিল প্রক্রিয়া নেই।",
+    "jp.sub":   "মিনিটের মধ্যে ভর্তি হন, কোনো অপেক্ষা নেই, কোনো জটিল প্রক্রিয়া নেই।",
     "jp.intro": "এটি কীভাবে কাজ করে:",
     "jp.step1.h": "আপনার ক্লাস ও স্লট বেছে নিন",
     "jp.step1.p": "অফলাইন (স্টুডিওতে) বা অনলাইন (লাইভ)। ফর্মে তালিকাভুক্ত উপলব্ধ সময় স্লট থেকে বেছে নিন।",
@@ -354,7 +354,7 @@ const TRANSLATIONS = {
     "jp.alt.wa": "WhatsApp করুন",
     "jp.alt.call": "কল করুন",
 
-    // PAGES — CONTACT
+    // PAGES, CONTACT
     "co.label":   "যোগাযোগ করুন",
     "co.h1":      "যোগাযোগ",
     "co.sub":     "আমরা আপনার কাছ থেকে শুনতে ভালোবাসি। স্টুডিও পরিদর্শন করুন বা যেকোনো সময় যোগাযোগ করুন।",
@@ -377,7 +377,7 @@ const TRANSLATIONS = {
     // BLOG
     "blog.label": "ব্লগ",
     "blog.h1":    "অন্তর্দৃষ্টি ও অনুপ্রেরণা",
-    "blog.p":     "যোগ, সুস্থতা এবং সচেতন জীবনযাপনের নিবন্ধ — শীঘ্রই আসছে।",
+    "blog.p":     "যোগ, সুস্থতা এবং সচেতন জীবনযাপনের নিবন্ধ, শীঘ্রই আসছে।",
     "blog.tag":   "শীঘ্রই আসছে",
   }
 };
