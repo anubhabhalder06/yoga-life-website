@@ -254,12 +254,12 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 }
 .hero-headline .italic-gold { font-style: italic; color: var(--gold); }
 .hero-sub { font-size: clamp(0.95rem, 2vw, 1.15rem); color: rgba(250,248,244,0.7); max-width: 38ch; margin-bottom: 0.6rem; line-height: 1.65; }
-.hero-trust { font-size: 0.78rem; color: rgba(250,248,244,0.45); margin-bottom: 1.75rem; letter-spacing: 0.04em; }
+.hero-trust { font-size: 0.75rem; color: rgba(250,248,244,0.45); margin-bottom: 1.75rem; letter-spacing: 0; }
 .hero-trust .stars { color: var(--gold); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .hero-corner { position: absolute; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,244,0.28); }
 .hero-corner.tl { top: calc(var(--nav-h) + 1rem); left: 1.1rem; }
-.hero-corner.br { bottom: 1.25rem; right: 1.1rem; text-align: right; }
+.hero-corner.br { bottom: 0.25rem; right: 0.75rem; text-align: right; }
 @media (min-width: 768px) { .hero-content { padding: 3.5rem 2rem 6rem; } }
 
 /* ===== STATS BAND ===== */
@@ -619,6 +619,10 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 html[lang="bn"] .hero-headline {
   font-size: clamp(2.2rem, 9vw, 4rem);
   line-height: 1.35;
+  letter-spacing: 0;
+}
+html[lang="bn"] * {
+  letter-spacing: 0 !important;
 }
 html[lang="bn"] h1, 
 html[lang="bn"] h2, 
