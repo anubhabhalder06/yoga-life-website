@@ -101,7 +101,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 
 /* Hero dark override â€” white nav links on home hero ONLY */
 #site-header.hero-dark:not(.scrolled) .nav-links a { color: var(--off-white); }
-#site-header.hero-dark:not(.scrolled) .nav-links a:hover { color: var(--teal); }
+#site-header.hero-dark:not(.scrolled) .nav-links a:hover, #site-header.hero-dark:not(.scrolled) .nav-links a.active { color: var(--teal); }
 #site-header.hero-dark:not(.scrolled) .nav-hamburger span { background: var(--off-white); }
 #site-header.hero-dark:not(.scrolled) .btn-join-nav { background: rgba(196,151,60,0.9); }
 
@@ -176,7 +176,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
   padding: 0.75rem 0; border-bottom: 1px solid var(--cream);
   color: var(--text-dark); transition: color var(--transition);
 }
-.nav-drawer a:hover { color: var(--teal); }
+.nav-drawer a:hover, .nav-drawer a.active { color: var(--teal); }
 .nav-drawer .btn-cta-gold {
   margin-top: 1.5rem; display: block; text-align: center;
   font-family: var(--font-body); font-size: 1rem; padding: 0.85rem 2rem;
