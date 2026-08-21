@@ -211,6 +211,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
   letter-spacing: 0.08em; text-transform: uppercase;
   padding: 0.8rem 1.6rem; border-radius: var(--r-xl); border: none; cursor: pointer;
   transition: transform 150ms var(--ease-sharp), background 200ms, box-shadow 200ms;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
   white-space: nowrap; min-height: 48px;
 }
 .btn:hover { transform: translateY(-2px); }
@@ -309,6 +311,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
   color: var(--off-white);
   animation: lineGlow 6s infinite;
   display: inline-block; /* Helps isolate the shadow rendering */
+  will-change: filter, text-shadow;
+  transform: translateZ(0);
 }
 .hero-headline span:nth-of-type(1) { animation-delay: 0s; }
 .hero-headline span:nth-of-type(2) { animation-delay: 4s; }
@@ -319,6 +323,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
   animation: lineGlowGold 6s infinite;
   animation-delay: 2s;
   display: inline-block;
+  will-change: filter, text-shadow;
+  transform: translateZ(0);
 }
 
 @keyframes lineGlow {
@@ -776,6 +782,10 @@ html[lang="bn"] .stat-label {
   /* Slow-fast-slow curve */
   transition: width 0.4s cubic-bezier(0.85, 0, 0.15, 1), background 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  
+  /* Hardware Acceleration for Mobile */
+  will-change: width, background-color;
+  transform: translateZ(0);
 }
 
 .dynamic-island.is-active,
@@ -853,7 +863,8 @@ html[lang="bn"] .stat-label {
   transition: opacity 0.4s cubic-bezier(0.85, 0, 0.15, 1), filter 0.4s ease, transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
   opacity: 1;
   filter: blur(0px);
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
+  will-change: transform, opacity, filter;
 }
 
 .di-text.fade-out {
