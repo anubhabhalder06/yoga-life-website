@@ -288,7 +288,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 }
 .hero-content {
   position: relative; z-index: 2;
-  padding: 2.5rem 1.1rem 12rem; /* massive bottom padding for floating buttons on mobile */
+  padding: 2.5rem 1.1rem 6rem; /* reduced padding since video is now here */
   max-width: var(--max-w); margin: 0 auto; width: 100%;
   pointer-events: none;
 }
@@ -378,7 +378,26 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 .hero-corner { position: absolute; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,244,0.28); }
 .hero-corner.tl { top: calc(var(--nav-h) + 1rem); left: 1.1rem; }
 .hero-corner.br { bottom: 0.25rem; right: 0.75rem; text-align: right; }
-@media (min-width: 768px) { .hero-content { padding: 3.5rem 2rem 6rem; } }
+@media (min-width: 768px) { .hero-content { padding: 3.5rem 2rem 5rem; } }
+
+/* ===== HERO VIDEO EMBED ===== */
+.hero-video-wrapper {
+  max-width: var(--max-w);
+  margin: 3rem auto 0;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #000;
+  position: relative;
+  z-index: 10;
+}
+.hero-video-wrapper video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
 
 /* ===== STATS BAND ===== */
 .stats-band { background: var(--teal); padding: 1.25rem 1.1rem; }
