@@ -99,6 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  /* ===== HERO SLIDER ===== */
+  var heroSlider = document.getElementById('hero-slider');
+  if (heroSlider && typeof Swiper !== 'undefined') {
+    new Swiper('#hero-slider', {
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      grabCursor: true,
+    });
+  }
+
   /* ===== SCROLL REVEAL ===== */
   var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
@@ -190,3 +208,159 @@ function loadSchedule() {
     })
     .catch(function(e) { console.warn('schedule.json not loaded', e); });
 }
+
+/* ===== HERO HEADLINE INTERACTION ===== */
+document.addEventListener('DOMContentLoaded', function() {
+  var headline = document.querySelector('.hero-headline');
+  if (headline) {
+    headline.addEventListener('mousemove', function(e) {
+      var rect = headline.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      headline.style.setProperty('--mouse-x', x + 'px');
+      headline.style.setProperty('--mouse-y', y + 'px');
+    });
+    headline.addEventListener('mouseleave', function() {
+      headline.style.setProperty('--mouse-x', '-1000px');
+      headline.style.setProperty('--mouse-y', '-1000px');
+    });
+  }
+});
+
+/* ===== DYNAMIC ISLAND NOTIFICATION ===== */
+function initDynamicIsland() {
+  // Remove old island if it exists (for hot reloads)
+  var old = document.querySelector('.di-wrapper') || document.querySelector('.dynamic-island');
+  if(old) old.remove();
+
+  var island = document.createElement('div');
+  island.className = 'dynamic-island';
+  
+  var lang = localStorage.getItem('yogalife-lang') || 'en';
+  var idleTxt = lang === 'bn' ? 'যোগ দিন' : 'JOIN NOW';
+  
+  island.innerHTML = '<div class="di-idle" data-i18n="di.idle">' + idleTxt + '</div><div class="di-content"><div class="di-dot"></div><div class="di-text"></div></div>';
+  
+  // Create flex wrapper to perfectly center it in the available header gap
+  var wrapper = document.createElement('div');
+  wrapper.className = 'di-wrapper';
+  wrapper.style.cssText = 'flex-grow: 1; display: flex; justify-content: center; position: relative; height: 100%; align-items: center; z-index: 9999; margin: 0 10px; min-width: 90px;';
+  wrapper.appendChild(island);
+
+  var navInner = document.querySelector('.nav-inner');
+  if (navInner) {
+    var navRight = navInner.querySelector('.nav-right');
+    navInner.insertBefore(wrapper, navRight);
+  } else {
+    document.body.appendChild(wrapper);
+  }
+
+  var phrases = [
+    { en: 'Limited Seats. <strong>Enroll!</strong>', bn: 'সীমিত আসন। <strong>ভর্তি হন!</strong>' },
+    { en: 'New Classes <strong>Added</strong>', bn: 'নতুন ক্লাস <strong>যুক্ত</strong>' },
+    { en: 'Book <strong>Free Trial</strong>', bn: '<strong>ফ্রি ট্রায়াল</strong> বুক করুন' },
+    { en: 'Join <strong>Community</strong>', bn: '<strong>যোগ দিন</strong>' },
+    { en: 'Find <strong>Inner Peace</strong>', bn: '<strong>শান্তি</strong> খুঁজুন' },
+    { en: 'Morning Yoga <strong>6:30 AM</strong>', bn: 'মর্নিং যোগা <strong>৬:৩০</strong>' },
+    { en: 'Boost <strong>Immunity</strong>', bn: '<strong>ইমিউনিটি</strong> বাড়ান' },
+    { en: 'Zumba <strong>Sessions</strong>', bn: 'জুম্বা <strong>সেশন</strong>' },
+    { en: 'Transform <strong>Life</strong>', bn: '<strong>জীবন</strong> বদলান' },
+    { en: 'Guided <strong>Meditation</strong>', bn: '<strong>মেডিটেশন</strong>' },
+    { en: 'Start <strong>Today</strong>', bn: '<strong>আজই</strong> শুরু করুন' }
+  ];
+  var currentPhraseIndex = 0;
+  var showDuration = 4000; // Visible for 4 seconds
+  
+  function triggerIsland() {
+    var navDrawer = document.getElementById('nav-drawer');
+    var isMenuOpen = navDrawer && navDrawer.classList.contains('open');
+    
+    // Only trigger if at top of page and menu is not open
+    if (window.scrollY < 50 && !isMenuOpen) {
+      var curLang = localStorage.getItem('yogalife-lang') || 'en';
+      var textEl = island.querySelector('.di-text');
+      
+      // Phrase 1 setup
+      if (textEl) {
+        textEl.style.width = 'max-content'; // force natural width for measurement
+        textEl.innerHTML = phrases[currentPhraseIndex][curLang] || phrases[currentPhraseIndex]['en'];
+        textEl.classList.remove('fade-out');
+        
+        var textW = textEl.scrollWidth;
+        var padding = window.innerWidth < 768 ? 50 : 60;
+        island.style.width = (textW + padding) + 'px';
+        textEl.style.width = textW + 'px'; // lock width so flex doesn't squish it during transition
+      }
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+      
+      // Expand Island
+      island.classList.add('is-active');
+      
+      // Wait 3s, then crossfade to Phrase 2
+      setTimeout(function() {
+        if (textEl) textEl.classList.add('fade-out'); // Slide UP and blur out
+        
+        setTimeout(function() {
+          // Jump text to bottom while invisible
+          if (textEl) {
+            textEl.classList.remove('fade-out');
+            textEl.classList.add('fade-in-prep');
+            textEl.style.width = 'max-content';
+            textEl.innerHTML = phrases[currentPhraseIndex][curLang] || phrases[currentPhraseIndex]['en'];
+            
+            // Adjust width to perfectly hug new text
+            var textW = textEl.scrollWidth;
+            var newPadding = window.innerWidth < 768 ? 50 : 60;
+            island.style.width = (textW + newPadding) + 'px';
+            textEl.style.width = textW + 'px'; // lock width
+          }
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          
+          // Force reflow and remove prep class to slide up smoothly
+          requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              if (textEl) textEl.classList.remove('fade-in-prep');
+              
+              // Wait 3s, then shrink Island
+              setTimeout(function() {
+                island.classList.remove('is-active');
+                island.style.width = ''; // revert to CSS small pill
+              }, 3000);
+            });
+          });
+          
+        }, 400); // Wait 400ms for slide-out transition
+      }, 3000);
+      
+      // Schedule next attempt after full animation sequence + idle time
+      setTimeout(triggerIsland, Math.random() * 5000 + 10000); // 10s to 15s delay
+    } else {
+      // Skipped due to scroll/menu, check again quickly
+      setTimeout(triggerIsland, 2000);
+    }
+  }
+  
+  // Instant translation for Dynamic Island
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var newLang = this.getAttribute('data-lang');
+      var textEl = island.querySelector('.di-text');
+      if (textEl && island.classList.contains('is-active')) {
+        var prevIndex = (currentPhraseIndex - 1 + phrases.length) % phrases.length;
+        textEl.style.width = 'max-content';
+        textEl.innerHTML = phrases[prevIndex][newLang] || phrases[prevIndex]['en'];
+        var textW = textEl.scrollWidth;
+        var padding = window.innerWidth < 768 ? 50 : 60;
+        island.style.width = (textW + padding) + 'px';
+        textEl.style.width = textW + 'px';
+      }
+    });
+  });
+  
+  // Initial popup after 2 seconds
+  setTimeout(triggerIsland, 2000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initDynamicIsland();
+});

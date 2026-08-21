@@ -23,6 +23,7 @@
   <meta property="og:image" content="https://www.yogalifebyrunu.org/assets/logo_wbg.png">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/yoga-life-logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -92,15 +93,23 @@
 
 <!-- HERO -->
 <section class="hero" aria-label="Hero section">
-  <img src="assets/GOPR5122_1716514111625.jpeg" alt="Yoga class at Yoga Life Baruipur" class="hero-bg-img" fetchpriority="high">
+  <div class="swiper hero-slider" id="hero-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="assets/GOPR5122_1716514111625.jpeg" alt="Yoga class at Yoga Life Baruipur" class="hero-bg-img" fetchpriority="high"></div>
+      <div class="swiper-slide"><img src="assets/DSC01743-01.jpg.jpeg" alt="Yoga class at Yoga Life Baruipur" class="hero-bg-img"></div>
+      <div class="swiper-slide"><img src="assets/DSC01751-01.jpg.jpeg" alt="Yoga class at Yoga Life Baruipur" class="hero-bg-img"></div>
+      <div class="swiper-slide"><img src="assets/IMG_20240331_092926_864-01.jpg.jpeg" alt="Yoga class at Yoga Life Baruipur" class="hero-bg-img"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
   <span class="hero-corner tl label" data-i18n="hero.corner1">Est. Baruipur</span>
   <span class="hero-corner br label" data-i18n="hero.corner2">Yoga &amp; Zumba</span>
   <div class="hero-content">
     <span class="hero-label label" data-i18n="hero.label">Baruipur · Kolkata</span>
     <h1 class="hero-headline">
-      <span data-i18n="hero.line1">Find Your</span><br>
-      <em class="italic-gold" data-i18n="hero.line2">Practice.</em><br>
-      <span data-i18n="hero.line3">Find Your Life.</span>
+      <span class="glow-word w1" data-i18n="hero.line1">Find Your</span><br>
+      <em class="italic-gold glow-word w2" data-i18n="hero.line2">Practice.</em><br>
+      <span class="glow-word w3" data-i18n="hero.line3">Find Your Life.</span>
     </h1>
     <p class="hero-sub" data-i18n="hero.sub">A premium yoga &amp; Zumba studio led by qualified trainer Mrs. Runu Halder Das.</p>
     <p class="hero-trust"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span data-i18n="hero.trust">5.0 · 40 Google Reviews · 200+ active students</span></p>
@@ -374,6 +383,7 @@
   </a>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
 </body>

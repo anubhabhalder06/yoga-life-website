@@ -189,6 +189,10 @@ const TRANSLATIONS = {
     "blog.h1":    "Insights & Inspiration",
     "blog.p":     "Articles on yoga, wellness, and mindful living, coming soon.",
     "blog.tag":   "Coming Soon",
+    
+    // DYNAMIC ISLAND
+    "di.idle":    "JOIN NOW",
+    "di.notice":  "Limited Seats. <strong>Enroll Fast!</strong>"
   },
   bn: {
     // NAV
@@ -379,6 +383,10 @@ const TRANSLATIONS = {
     "blog.h1":    "অন্তর্দৃষ্টি ও অনুপ্রেরণা",
     "blog.p":     "যোগ, সুস্থতা এবং সচেতন জীবনযাপনের নিবন্ধ, শীঘ্রই আসছে।",
     "blog.tag":   "শীঘ্রই আসছে",
+    
+    // DYNAMIC ISLAND
+    "di.idle":    "যোগ দিন",
+    "di.notice":  "সীমিত আসন। <strong>দ্রুত ভর্তি হন!</strong>"
   }
 };
 
