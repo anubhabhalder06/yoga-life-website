@@ -316,19 +316,16 @@ function initDynamicIsland() {
           }
           currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
           
-          // Force reflow and remove prep class to slide up smoothly
-          requestAnimationFrame(function() {
-            requestAnimationFrame(function() {
-              if (textEl) textEl.classList.remove('fade-in-prep');
-              
-              // Wait 3s, then shrink Island
-              setTimeout(function() {
-                island.classList.remove('is-active');
-                island.style.width = ''; // revert to CSS small pill
-              }, 3000);
-            });
-          });
-          
+          // Wait for island width transition (approx 350ms) to almost finish before fading text in
+          setTimeout(function() {
+            if (textEl) textEl.classList.remove('fade-in-prep');
+            
+            // Wait 3s, then shrink Island
+            setTimeout(function() {
+              island.classList.remove('is-active');
+              island.style.width = ''; // revert to CSS small pill
+            }, 3000);
+          }, 350);
         }, 400); // Wait 400ms for slide-out transition
       }, 3000);
       

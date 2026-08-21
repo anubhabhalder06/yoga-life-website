@@ -290,7 +290,7 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 }
 .hero-content {
   position: relative; z-index: 2;
-  padding: 2.5rem 1.1rem 1.5rem;
+  padding: 2.5rem 1.1rem 8rem; /* 8rem bottom padding avoids floating buttons */
   max-width: var(--max-w); margin: 0 auto; width: 100%;
   pointer-events: none;
 }
@@ -886,17 +886,19 @@ html[lang="bn"] .stat-label {
 }
 
 @media (max-width: 767px) {
+  .hero-content { padding-bottom: 60px; }
   .di-wrapper {
     justify-content: center !important;
     margin-left: 0 !important;
   }
   .dynamic-island {
-    left: 45%;
+    left: 47%;
   }
-  .dynamic-island.is-active,
-  .dynamic-island:hover {
-  }
-  .di-text {
-    font-size: 0.65rem;
+}
+@media (min-width: 768px) {
+  .dynamic-island {
+    left: auto;
+    right: 260px;
+    transform: translateY(-50%);
   }
 }
