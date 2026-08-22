@@ -783,7 +783,7 @@ html[lang="bn"] .stat-label {
 
 /* ===== POPULAR TIMES GRAPH ===== */
 .popular-times-section {
-  padding: 3rem 1.1rem 4rem;
+  padding: 1rem 1.1rem 4rem;
   background: var(--off-white);
 }
 
