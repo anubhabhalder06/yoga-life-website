@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline | Yoga Life</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .offline-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: var(--off-white);
+      padding: 2rem;
+    }
+    .offline-logo {
+      width: 120px;
+      margin-bottom: 2rem;
+    }
+    .offline-title {
+      color: var(--teal);
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .offline-message {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+    }
+    .yoga-fact-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--r-lg);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      max-width: 600px;
+      width: 100%;
+      border-top: 4px solid var(--gold);
+    }
+    .yoga-fact-box h3 {
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .yoga-fact-box p {
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .btn-retry {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <img src="assets/yoga-life-logo.png" alt="Yoga Life Logo" class="offline-logo">
+    <h1 class="offline-title">You're Offline</h1>
+    <p class="offline-message">It looks like you've lost your internet connection. But don't worry, your practice doesn't need Wi-Fi!</p>
+    
+    <div class="yoga-fact-box">
+      <h3>Did you know?</h3>
+      <p id="fact-text">Yoga is over 5,000 years old. Originating in Northern India, the word "Yoga" comes from the Sanskrit root "Yuj", which means "to join" or "to yoke", symbolizing the union of body and consciousness.</p>
+    </div>
+    
+    <button onclick="window.location.reload()" class="btn btn-teal btn-retry">Try Reconnecting</button>
+  </div>
+
+  <script>
+    const facts = [
+      "Yoga is over 5,000 years old, originating in Northern India as a path to spiritual enlightenment.",
+      "The word 'Yoga' comes from the Sanskrit root 'Yuj', which means to yoke or unite the mind, body, and spirit.",
+      "Regular yoga practice can improve brain function, increasing memory, focus, and overall cognitive performance.",
+      "There are over 100 different styles of yoga. Hatha yoga is the most common form practiced in the West.",
+      "Deep, mindful breathing (Pranayama) in yoga reduces stress by activating the parasympathetic nervous system."
+    ];
+    document.getElementById('fact-text').innerText = facts[Math.floor(Math.random() * facts.length)];
+  </script>
+</body>
+</html>
