@@ -21,6 +21,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/yoga-life-logo.png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header id="site-header" class="scrolled">
@@ -162,6 +163,37 @@
 
   </div>
 </section>
+
+<!-- POPULAR TIMES SECTION -->
+<section class="popular-times-section reveal">
+  <div class="container">
+    <div class="section-header text-center" style="margin-bottom: 2rem;">
+      <span class="label">Studio Activity</span>
+      <h2 style="color: var(--text-dark);">Popular Times</h2>
+      <p class="text-muted" style="font-size: 0.95rem; margin-top: 0.5rem;">See when the studio is typically busy.</p>
+    </div>
+    
+    <div class="popular-times-container">
+      <div class="pt-tabs-wrapper">
+        <div class="pt-tabs" role="tablist" aria-label="Select day of the week">
+          <button class="pt-tab active" data-day="0">MON</button>
+          <button class="pt-tab" data-day="1">TUE</button>
+          <button class="pt-tab" data-day="2">WED</button>
+          <button class="pt-tab" data-day="3">THU</button>
+          <button class="pt-tab" data-day="4">FRI</button>
+          <button class="pt-tab" data-day="5">SAT</button>
+          <button class="pt-tab" data-day="6">SUN</button>
+        </div>
+      </div>
+      
+      <div class="pt-chart-wrapper">
+        <h3 id="pt-status-text" class="pt-status-text">Usually a little busy</h3>
+        <canvas id="popularTimesChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-band">
   <div class="reveal">
     <h2 data-i18n="cta.h2">Ready to Begin?</h2>

@@ -236,5 +236,171 @@ if ('serviceWorker' in navigator) {
     }, function(err) {
       console.log('ServiceWorker registration failed: ', err);
     });
-  });
 }
+
+/* ===== POPULAR TIMES CHART ===== */
+document.addEventListener('DOMContentLoaded', function() {
+  const canvas = document.getElementById('popularTimesChart');
+  if (!canvas) return; // Only run if chart canvas exists
+
+  // Make sure Chart is available
+  if (typeof Chart === 'undefined') {
+    console.warn('Chart.js is not loaded.');
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+  
+  // Data estimated from Google Maps screenshots
+  // Hours: 6a, 7a, 8a, 9a, 10a, 11a, 12p, 1p, 2p, 3p, 4p, 5p, 6p, 7p, 8p
+  const labels = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+  
+  const weeklyData = [
+    { // Mon
+      data: [30, 25, 25, 20, 20, 20, 20, 25, 25, 30, 40, 50, 70, 60, 55],
+      text: "Usually a little busy at <strong>6 PM</strong>"
+    },
+    { // Tue
+      data: [30, 35, 40, 40, 30, 30, 30, 50, 60, 55, 40, 50, 70, 80, 60],
+      text: "Usually as busy as it gets at <strong>7 PM</strong>"
+    },
+    { // Wed
+      data: [30, 45, 50, 50, 40, 40, 40, 45, 30, 35, 25, 35, 50, 55, 60],
+      text: "Usually a little busy at <strong>8 PM</strong>"
+    },
+    { // Thu
+      data: [20, 25, 20, 15, 20, 35, 30, 25, 25, 20, 30, 40, 50, 45, 45],
+      text: "Usually a little busy at <strong>6 PM</strong>"
+    },
+    { // Fri
+      data: [30, 15, 10, 20, 35, 40, 40, 50, 55, 65, 55, 50, 60, 55, 45],
+      text: "Usually a little busy at <strong>6 PM</strong>"
+    },
+    { // Sat
+      data: [40, 50, 80, 50, 50, 40, 35, 30, 25, 25, 30, 30, 35, 35, 50],
+      text: "Usually a little busy at <strong>8 AM</strong>"
+    },
+    { // Sun
+      data: [25, 20, 35, 45, 50, 40, 35, 30, 40, 55, 75, 80, 55, 45, 0],
+      text: "Usually a little busy at <strong>5 PM</strong>"
+    }
+  ];
+
+  // Default to today
+  const today = new Date().getDay();
+  // JS getDay(): 0 = Sun, 1 = Mon ... 6 = Sat
+  // Our tabs: 0 = Mon, 1 = Tue ... 6 = Sun
+  let initialDay = today - 1;
+  if (initialDay === -1) initialDay = 6; // Sunday
+
+  // Create gradient
+  let gradient = ctx.createLinearGradient(0, 0, 0, 300);
+  gradient.addColorStop(0, 'rgba(42, 173, 173, 0.45)'); // Teal transparent
+  gradient.addColorStop(1, 'rgba(42, 173, 173, 0.02)'); // Transparent
+
+  const config = {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Activity',
+        data: weeklyData[initialDay].data,
+        borderColor: '#2AADAD', // var(--teal)
+        backgroundColor: gradient,
+        borderWidth: 3,
+        fill: true,
+        tension: 0.4, // Sexy smooth bezier curves
+        pointRadius: 0,
+        pointHoverRadius: 6,
+        pointBackgroundColor: '#C4973C', // Gold
+        pointBorderColor: '#FFFFFF',
+        pointBorderWidth: 2,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          backgroundColor: 'rgba(28, 36, 36, 0.9)', // var(--charcoal)
+          titleFont: { family: 'Outfit', size: 12 },
+          bodyFont: { family: 'Outfit', size: 14, weight: 'bold' },
+          padding: 10,
+          cornerRadius: 8,
+          displayColors: false,
+          callbacks: {
+            label: function() { return 'Activity Level'; }
+          }
+        }
+      },
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      scales: {
+        x: {
+          grid: {
+            display: false,
+            drawBorder: false
+          },
+          ticks: {
+            font: { family: 'Outfit', size: 11 },
+            color: '#6B6560', // var(--text-muted)
+            maxTicksLimit: 8
+          }
+        },
+        y: {
+          display: false, // Hide Y axis entirely for a cleaner look
+          min: 0,
+          max: 100
+        }
+      },
+      animation: {
+        duration: 800,
+        easing: 'easeOutQuart'
+      }
+    }
+  };
+
+  const chart = new Chart(ctx, config);
+
+  // Set initial text and tab
+  const statusText = document.getElementById('pt-status-text');
+  if (statusText) {
+    statusText.innerHTML = weeklyData[initialDay].text;
+    statusText.style.transition = 'opacity 0.3s ease';
+  }
+  
+  const tabs = document.querySelectorAll('.pt-tab');
+  tabs.forEach(tab => {
+    tab.classList.remove('active');
+    if (parseInt(tab.getAttribute('data-day')) === initialDay) {
+      tab.classList.add('active');
+    }
+
+    tab.addEventListener('click', function() {
+      // Remove active from all
+      tabs.forEach(t => t.classList.remove('active'));
+      // Add active to clicked
+      this.classList.add('active');
+      
+      const dayIndex = parseInt(this.getAttribute('data-day'));
+      
+      // Update Chart Data
+      chart.data.datasets[0].data = weeklyData[dayIndex].data;
+      chart.update();
+      
+      // Update Status Text
+      if (statusText) {
+        statusText.style.opacity = 0;
+        setTimeout(() => {
+          statusText.innerHTML = weeklyData[dayIndex].text;
+          statusText.style.opacity = 1;
+        }, 300); 
+      }
+    });
+  });
+});
