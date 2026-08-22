@@ -50,7 +50,7 @@ const TRANSLATIONS = {
     "classes.zumba.tag": "Zumba",
     "classes.zumba.h3":  "Zumba Fitness",
     "classes.zumba.p":   "High-energy dance fitness classes that feel like a party. Tone your body, lift your mood, and have the time of your life.",
-    "classes.link":     "View Schedule",
+    "classes.link":     "View Classes",
 
     // GALLERY
     "gallery.label": "Our Studio",
