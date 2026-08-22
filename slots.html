@@ -29,6 +29,7 @@
     <nav aria-label="Primary navigation"><ul class="nav-links">
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="classes.html" data-i18n="nav.classes">Classes</a></li>
+        <li><a href="slots.html">Slots</a></li>
         <li><a href="about.html" data-i18n="nav.about">About</a></li>
         <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
@@ -47,6 +48,7 @@
 <nav class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
   <a href="index.html" data-i18n="nav.home">Home</a>
   <a href="classes.html" data-i18n="nav.classes">Classes</a>
+  <a href="slots.html">Slots</a>
   <a href="about.html" data-i18n="nav.about">About</a>
   <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
   <a href="contact.html" data-i18n="nav.contact">Contact</a>
@@ -55,9 +57,9 @@
 </nav>
 <section class="page-hero">
   <div class="container">
-    <span class="label" data-i18n="cp.label">Our Programs</span>
-    <h1 data-i18n="cp.h1">Available Slots</h1>
-    <p data-i18n="cp.sub">Offline and online slot timings for all classes.</p>
+    <span class="label">Schedule & Timings</span>
+    <h1>Class Slots</h1>
+    <p>Find the perfect time for your practice, in-studio or online.</p>
   </div>
 </section>
 <section class="schedule-section" style="background: var(--off-white); padding-top: clamp(2rem, 5vw, 4rem);">
@@ -68,8 +70,13 @@
       <p style="margin-top: 1rem; color: var(--text-muted); max-width: 600px; margin-inline: auto;">Choose the schedule and pricing plan that fits your lifestyle. We offer flexible options for both in-studio and online practitioners.</p>
     </div>
 
+    <div class="timings-tabs reveal" role="tablist" style="margin-top: 2rem; justify-content: center;">
+      <button class="timings-tab active" data-panel="cp-offline" role="tab" id="cp-tab-offline" aria-selected="true">Offline (In-Studio)</button>
+      <button class="timings-tab" data-panel="cp-online" role="tab" id="cp-tab-online" aria-selected="false">Online (Live)</button>
+    </div>
+
     <!-- OFFLINE SECTION -->
-    <div class="reveal" style="margin-top: clamp(1.5rem, 5vw, 3rem); background: var(--white); border-radius: var(--r-lg); padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <div id="cp-offline" class="timings-panel active reveal" style="margin-top: clamp(1.5rem, 5vw, 3rem); background: var(--white); border-radius: var(--r-lg); padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
       <h3 style="color: var(--teal); font-family: var(--font-heading); font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: clamp(0.75rem, 2vw, 1.5rem); text-align: center;">Offline (In-Studio) Classes</h3>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1rem, 4vw, 2rem); align-items: start;">
@@ -115,7 +122,7 @@
     </div>
 
     <!-- ONLINE SECTION -->
-    <div class="reveal" style="margin-top: clamp(1.5rem, 5vw, 3rem); background: var(--white); border-radius: var(--r-lg); padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <div id="cp-online" class="timings-panel reveal" style="margin-top: clamp(1.5rem, 5vw, 3rem); background: var(--white); border-radius: var(--r-lg); padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
       <h3 style="color: var(--gold-dark); font-family: var(--font-heading); font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: clamp(0.75rem, 2vw, 1.5rem); text-align: center;">Online (Live) Classes</h3>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1rem, 4vw, 2rem); align-items: start;">
@@ -188,6 +195,7 @@
       <ul>
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="classes.html" data-i18n="nav.classes">Classes</a></li>
+        <li><a href="slots.html">Slots</a></li>
         <li><a href="about.html" data-i18n="nav.about">About</a></li>
         <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
         <li><a href="join.html" data-i18n="nav.join">Join Now</a></li>
@@ -212,3 +220,5 @@
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
 </body></html>
+
+
