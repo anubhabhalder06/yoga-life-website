@@ -56,56 +56,111 @@
 <section class="page-hero">
   <div class="container">
     <span class="label" data-i18n="cp.label">Our Programs</span>
-    <h1 data-i18n="cp.h1">Classes</h1>
-    <p data-i18n="cp.sub">Offline and online classes for all ages and levels in Baruipur.</p>
-    <a href="slots.html" class="btn btn-gold" style="margin-top: 1rem;">View Slots</a>
+    <h1 data-i18n="cp.h1">Available Slots</h1>
+    <p data-i18n="cp.sub">Offline and online slot timings for all classes.</p>
   </div>
 </section>
-<section class="classes-section">
-  <div class="class-detail reveal">
-    <img src="assets/gallery-8.jpg" alt="Yoga class at Yoga Life" class="class-detail-img" loading="lazy">
-    <div class="class-detail-body">
-      <span class="label" data-i18n="cp.yoga.label">Yoga Program</span>
-      <h2 data-i18n="cp.yoga.h2">Yoga - Body, Breath and Balance</h2>
-      <p data-i18n="cp.yoga.p1">Our yoga sessions are thoughtfully designed for practitioners of all levels.</p>
-      <p data-i18n="cp.yoga.p2">All sessions are led by Mrs. Runu Halder Das, a qualified instructor, in a supportive and non-judgmental environment.</p>
-      <ul class="benefits-list">
-        <li data-i18n="cp.yoga.b1">Suitable for all ages, including 50+</li>
-        <li data-i18n="cp.yoga.b2">Hatha yoga, flexibility and strength work</li>
-        <li data-i18n="cp.yoga.b3">Pranayama and meditation techniques</li>
-        <li data-i18n="cp.yoga.b4">Weight management and stress relief</li>
-        <li data-i18n="cp.yoga.b5">Available offline and online</li>
-      </ul>
-      <a href="join.html" class="btn btn-gold" id="yoga-join-btn" data-i18n="cp.join.cta">Join Now</a>
+<section class="schedule-section" style="background: var(--off-white); padding-top: clamp(2rem, 5vw, 4rem);">
+  <div class="container">
+    <div class="section-header reveal" style="text-align: center;">
+      <span class="label">Comprehensive Guide</span>
+      <h2>Timings &amp; Fees</h2>
+      <p style="margin-top: 1rem; color: var(--text-muted); max-width: 600px; margin-inline: auto;">Choose the schedule and pricing plan that fits your lifestyle. We offer flexible options for both in-studio and online practitioners.</p>
     </div>
-  </div>
-  <div class="class-detail reverse reveal">
-    <img src="assets/gallery-9.jpg" alt="Zumba class at Yoga Life" class="class-detail-img" loading="lazy">
-    <div class="class-detail-body">
-      <span class="label" data-i18n="cp.zumba.label">Zumba Program</span>
-      <h2 data-i18n="cp.zumba.h2">Zumba - Dance, Fitness and Joy</h2>
-      <p data-i18n="cp.zumba.p1">Zumba at Yoga Life is high-energy, joyful, and genuinely fun.</p>
-      <p data-i18n="cp.zumba.p2">Our Zumba sessions burn calories, improve coordination, lift mood, and build community.</p>
-      <ul class="benefits-list">
-        <li data-i18n="cp.zumba.b1">High-energy cardio that does not feel like exercise</li>
-        <li data-i18n="cp.zumba.b2">Dance fitness for all levels</li>
-        <li data-i18n="cp.zumba.b3">Burn calories and improve coordination</li>
-        <li data-i18n="cp.zumba.b4">Mood-lifting community experience</li>
-        <li data-i18n="cp.zumba.b5">Available offline only</li>
-      </ul>
-      <a href="join.html" class="btn btn-gold" id="zumba-join-btn" data-i18n="cp.join.cta">Join Now</a>
+
+    <!-- OFFLINE SECTION -->
+    <div class="reveal" style="margin-top: clamp(1.5rem, 5vw, 3rem); background: var(--white); border-radius: var(--r-lg); padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+      <h3 style="color: var(--teal); font-family: var(--font-heading); font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: clamp(0.75rem, 2vw, 1.5rem); text-align: center;">Offline (In-Studio) Classes</h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1rem, 4vw, 2rem); align-items: start;">
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-dark);">Available Time Slots</h4>
+          <table class="schedule-table">
+            <thead><tr><th>Time</th><th>Days</th></tr></thead>
+            <tbody>
+              <tr><td>6:00 - 7:00 am</td><td>Mon - Fri</td></tr>
+              <tr><td>8:30 - 9:30 am</td><td>Mon - Fri</td></tr>
+              <tr><td>4:30 - 5:30 pm</td><td>Mon - Sat</td></tr>
+              <tr><td>5:40 - 6:40 pm</td><td>Mon - Sat</td></tr>
+              <tr><td>7:30 - 8:30 pm</td><td>Mon - Sat</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-dark);">Fee Structure</h4>
+          <div class="pricing-cards" style="margin-top: 0;">
+            <div class="pricing-card" style="background: var(--sand);">
+              <p class="plan-name">5 Days / Week</p>
+              <p class="price">&#8377;450</p>
+              <p class="price-period">per month</p>
+              <ul style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem;">
+                <li>Access to any 5 offline classes weekly</li>
+                <li>Personalized attention</li>
+              </ul>
+            </div>
+            <div class="pricing-card">
+              <p class="plan-name">3 Days / Week</p>
+              <p class="price">&#8377;250</p>
+              <p class="price-period">per month</p>
+              <ul style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem;">
+                <li>Access to 3 offline classes weekly</li>
+                <li>Great for beginners</li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:.85rem; color:var(--text-muted); margin-top:1rem; font-weight: 500;">* One-time Registration Fee: &#8377;250 (Applicable for all new members)</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section class="schedule-section">
-  <div class="schedule-inner" style="text-align: center;">
-    <div class="section-header reveal" style="margin-left:0; text-align: center;">
-      <span class="label" data-i18n="cp.sched.label">Timings and Fees</span>
-      <h2 data-i18n="cp.sched.h2">Schedules</h2>
+
+    <!-- ONLINE SECTION -->
+    <div class="reveal" style="margin-top: clamp(1.5rem, 5vw, 3rem); background: var(--white); border-radius: var(--r-lg); padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+      <h3 style="color: var(--gold-dark); font-family: var(--font-heading); font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: clamp(0.75rem, 2vw, 1.5rem); text-align: center;">Online (Live) Classes</h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1rem, 4vw, 2rem); align-items: start;">
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-dark);">Available Time Slots</h4>
+          <table class="schedule-table">
+            <thead><tr><th>Time</th><th>Days</th></tr></thead>
+            <tbody>
+              <tr><td>6:00 - 7:00 am</td><td>Mon - Fri</td></tr>
+              <tr><td>7:30 - 8:30 am</td><td>Mon - Fri</td></tr>
+              <tr><td>7:30 - 8:30 pm</td><td>Mon, Thu, Sat</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-dark);">Fee Structure</h4>
+          <div class="pricing-cards" style="margin-top: 0;">
+            <div class="pricing-card">
+              <p class="plan-name">Monthly Plan</p>
+              <p class="price">&#8377;500</p>
+              <p class="price-period">per month</p>
+              <ul style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem;">
+                <li>Unlimited online sessions</li>
+                <li>HD streaming quality</li>
+              </ul>
+            </div>
+            <div class="pricing-card" style="background: rgba(196,151,60,0.08); border-color: var(--gold);">
+              <p class="plan-name">Quarterly Special</p>
+              <p class="price">&#8377;1,300<span class="savings">Save &#8377;200</span></p>
+              <p class="price-period">per 3 months</p>
+              <ul style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem;">
+                <li>Unlimited online sessions</li>
+                <li>Best value package</li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:.85rem; color:var(--text-muted); margin-top:1rem; font-weight: 500;">* One-time Registration Fee: &#8377;250 (Applicable for all new members)</p>
+        </div>
+      </div>
     </div>
-    <div class="reveal">
-      <p style="margin-bottom: 2rem;">Check our available online and offline class timings.</p>
-      <a href="slots.html" class="btn btn-gold" id="view-slots-btn">View Slots</a>
+
+    <div style="margin-top: clamp(2rem, 5vw, 4rem); text-align: center;" class="reveal">
+      <h3 style="margin-bottom: 1rem; font-size: clamp(1.2rem, 3vw, 1.5rem);">Ready to Begin Your Journey?</h3>
+      <a href="join.html" class="btn btn-gold" id="sched-join-btn">Join Now</a>
     </div>
   </div>
 </section>
