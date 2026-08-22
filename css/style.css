@@ -500,7 +500,8 @@ h3 { font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
 .schedule-table tr:last-child td { border-bottom: none; }
 .schedule-table tr:hover td { background: rgba(42,173,173,0.06); }
 
-.pricing-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 1.5rem; }
+.pricing-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-top: 1.5rem; }
+@media (min-width: 600px) { .pricing-cards { grid-template-columns: 1fr 1fr; } }
 .pricing-card {
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(8px);
@@ -801,21 +802,22 @@ html[lang="bn"] .stat-label {
   justify-content: center;
   margin-bottom: 2rem;
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px; /* Space for scrollbar if any */
+}
+.pt-tabs-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .pt-tabs {
   display: inline-flex;
+  flex-shrink: 0;
   gap: 4px;
   background: rgba(42, 173, 173, 0.08);
   border-radius: 30px;
   padding: 5px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  max-width: 100%;
-}
-.pt-tabs::-webkit-scrollbar {
-  display: none;
 }
 
 .pt-tab {
@@ -867,7 +869,7 @@ html[lang="bn"] .stat-label {
     padding: 1.5rem 1rem;
     border-radius: var(--r-lg);
   }
-  .pt-tabs {
+  .pt-tabs-wrapper {
     justify-content: flex-start;
   }
   .pt-chart-wrapper {
