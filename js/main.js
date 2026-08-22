@@ -350,7 +350,10 @@ document.addEventListener('DOMContentLoaded', function() {
           ticks: {
             font: { family: 'Outfit', size: 11 },
             color: '#6B6560', // var(--text-muted)
-            maxTicksLimit: 8
+            maxTicksLimit: 8,
+            maxRotation: 0,
+            minRotation: 0,
+            autoSkip: true
           }
         },
         y: {
