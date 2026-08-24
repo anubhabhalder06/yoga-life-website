@@ -6,68 +6,215 @@
   <title>Offline | Yoga Life</title>
   <link rel="stylesheet" href="css/style.css?v=2.4">
   <style>
-    .offline-container {
+    /* Premium Offline Page Styles - Light & Clean */
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--off-white);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
       min-height: 100vh;
+      position: relative;
+    }
+    
+    /* Subtle background accent gradients */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -10vh; left: -10vw;
+      width: 50vw; height: 50vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42, 173, 173, 0.08) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: -10vh; right: -10vw;
+      width: 60vw; height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 151, 60, 0.06) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .offline-wrapper {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      background-color: var(--off-white);
-      padding: 2rem;
+      padding: 2.5rem 1.5rem;
+      position: relative;
+      z-index: 1;
     }
-    .offline-logo {
-      width: 120px;
-      margin-bottom: 2rem;
-    }
-    .offline-title {
-      color: var(--teal);
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .offline-message {
-      color: var(--text-dark);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-      max-width: 500px;
-    }
-    .yoga-fact-box {
+    
+    .offline-logo-container {
       background: var(--white);
-      padding: 2rem;
-      border-radius: var(--r-lg);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      max-width: 600px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+      margin-bottom: 2.5rem;
+      animation: gentleFloat 6s ease-in-out infinite;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .offline-logo {
+      width: 85px;
+      height: auto;
+    }
+
+    @keyframes gentleFloat {
+      0% { transform: translateY(0); box-shadow: 0 12px 35px rgba(0,0,0,0.06); }
+      50% { transform: translateY(-10px); box-shadow: 0 20px 45px rgba(0,0,0,0.08); }
+      100% { transform: translateY(0); box-shadow: 0 12px 35px rgba(0,0,0,0.06); }
+    }
+
+    .offline-content {
+      text-align: center;
+      max-width: 420px;
       width: 100%;
-      border-top: 4px solid var(--gold);
+      animation: fadeSlideUp 0.8s var(--ease-sharp) forwards;
     }
-    .yoga-fact-box h3 {
-      color: var(--gold-dark);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+
+    .offline-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 8vw, 3.2rem);
+      color: var(--teal-dark);
+      margin-bottom: 0.8rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
     }
-    .yoga-fact-box p {
+
+    .offline-message {
       color: var(--text-muted);
-      font-style: italic;
+      font-size: 1.05rem;
       line-height: 1.6;
+      margin-bottom: 2.5rem;
     }
+
+    .insight-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: var(--r-lg);
+      padding: 1.8rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.5rem;
+      position: relative;
+      text-align: left;
+    }
+    
+    .insight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 1.5rem; right: 1.5rem; height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 3px;
+    }
+
+    .insight-card h3 {
+      color: var(--gold-dark);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+      font-family: var(--font-body);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .insight-card h3::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .insight-card p {
+      color: var(--text-dark);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
     .btn-retry {
-      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 1.1rem 2rem;
+      font-size: 0.9rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: var(--r-xl);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 4px 15px rgba(42, 173, 173, 0.25);
+      font-family: var(--font-body);
+    }
+
+    .btn-retry:hover {
+      background: var(--teal-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(42, 173, 173, 0.4);
+    }
+    
+    .btn-retry:active {
+      transform: translateY(0);
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Responsive adjustment */
+    @media (max-width: 480px) {
+      .offline-wrapper {
+        padding: 1.5rem 1.2rem;
+      }
+      .offline-logo-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 2rem;
+      }
+      .offline-logo {
+        width: 70px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="offline-container">
-    <img src="assets/yoga-life-logo.png" alt="Yoga Life Logo" class="offline-logo">
-    <h1 class="offline-title">You're Offline</h1>
-    <p class="offline-message">It looks like you've lost your internet connection. But don't worry, your practice doesn't need Wi-Fi!</p>
-    
-    <div class="yoga-fact-box">
-      <h3>Did you know?</h3>
-      <p id="fact-text">Yoga is over 5,000 years old. Originating in Northern India, the word "Yoga" comes from the Sanskrit root "Yuj", which means "to join" or "to yoke", symbolizing the union of body and consciousness.</p>
+  
+  <div class="offline-wrapper">
+    <div class="offline-content">
+      <div class="offline-logo-container">
+        <img src="assets/yoga-life-logo.png" alt="Yoga Life Logo" class="offline-logo">
+      </div>
+      
+      <h1 class="offline-title">Breathe In.</h1>
+      <p class="offline-message">You're currently offline, but your practice continues. Take a moment to center yourself.</p>
+      
+      <div class="insight-card">
+        <h3>Yoga Insight</h3>
+        <p id="fact-text">The word "Yoga" comes from the Sanskrit root "Yuj", which means "to join" or "to yoke", symbolizing the union of body and consciousness.</p>
+      </div>
+      
+      <button onclick="window.location.reload()" class="btn-retry">Reconnect</button>
     </div>
-    
-    <button onclick="window.location.reload()" class="btn btn-teal btn-retry">Try Reconnecting</button>
   </div>
 
   <script>
