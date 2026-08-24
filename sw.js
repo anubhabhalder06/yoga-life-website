@@ -1,9 +1,9 @@
-const CACHE_NAME = 'yoga-life-offline-v1';
+const CACHE_NAME = 'yoga-life-offline-v2';
 const OFFLINE_URL = 'offline.html';
 
 const FILES_TO_CACHE = [
   OFFLINE_URL,
-  'css/style.css',
+  'css/style.css?v=2.4',
   'assets/yoga-life-logo.png'
 ];
 
