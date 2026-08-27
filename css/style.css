@@ -882,3 +882,334 @@ html[lang="bn"] .stat-label {
     height: 250px;
   }
 }
+
+/* =============================================
+   MOBILE OPTIMISATION (max-width: 767px)
+   ============================================= */
+
+/* ── SLOTS PAGE: Sticky tab bar ── */
+.slots-tabs-sticky {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 50;
+  background: var(--off-white);
+  padding: 0.6rem 1.1rem 0.5rem;
+  margin: 0 -1.1rem; /* bleed to container edges */
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  /* On desktop the tab bar is NOT sticky — stays inline */
+  .slots-tabs-sticky {
+    position: static;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+    display: block;
+  }
+}
+
+/* ── SLOTS PAGE: Compact panel on mobile ── */
+@media (max-width: 767px) {
+  /* Reduce outer section padding — attribute selector helps override inline style */
+  .schedule-section,
+  [data-slots-section="true"] {
+    padding-top: 0 !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Remove top margin on panels since sticky bar handles spacing */
+  #cp-offline,
+  #cp-online {
+    margin-top: 0.75rem !important;
+    padding: 1rem !important;
+  }
+
+  /* Panel heading smaller on mobile */
+  #cp-offline > h3,
+  #cp-online > h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Inner grid: force single column but tighter gaps */
+  #cp-offline > div[style*="grid"],
+  #cp-online > div[style*="grid"] {
+    gap: 1rem !important;
+  }
+
+  /* Section subheadings (Available Time Slots / Fee Structure) */
+  #cp-offline h4,
+  #cp-online h4 {
+    font-size: 0.82rem !important;
+    margin-bottom: 0.6rem !important;
+    color: var(--text-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+  }
+
+  /* Schedule table more compact on mobile */
+  .schedule-table th,
+  .schedule-table td {
+    padding: 0.55rem 0.6rem !important;
+    font-size: 0.83rem !important;
+  }
+
+  /* Pricing cards: side-by-side on mobile using flex row */
+  .pricing-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.6rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding-bottom: 0.25rem !important;
+  }
+  .pricing-cards::-webkit-scrollbar { display: none !important; }
+
+  .pricing-card {
+    flex: 0 0 calc(50% - 0.3rem) !important;
+    min-width: 140px !important;
+    padding: 0.85rem !important;
+  }
+
+  .pricing-card .price {
+    font-size: 1.4rem !important;
+  }
+
+  /* Registration fee note smaller */
+  #cp-offline > div > div > p[style*="reg"],
+  #cp-online > div > div > p[style*="reg"],
+  .schedule-section p[data-i18n="sp.reg.fee"] {
+    font-size: 0.78rem !important;
+    margin-top: 0.6rem !important;
+  }
+
+  /* Popular times section: less top padding since it follows slots */
+  .popular-times-section {
+    padding-top: 2rem !important;
+  }
+}
+
+/* ── INDEX PAGE: Cap hero video height on mobile ── */
+@media (max-width: 767px) {
+  .hero-video-wrapper {
+    margin-top: 1.5rem !important;
+    max-height: 240px !important;
+    overflow: hidden !important;
+  }
+  .hero-video-wrapper video {
+    max-height: 240px !important;
+    object-fit: cover !important;
+  }
+}
+
+/* ── ALL INNER PAGES: Reduce page-hero padding on mobile ── */
+@media (max-width: 767px) {
+  .page-hero {
+    padding: calc(var(--nav-h) + 1.5rem) 1.1rem 2rem !important;
+  }
+  .page-hero h1 {
+    font-size: clamp(1.8rem, 9vw, 3rem) !important;
+  }
+  .page-hero p {
+    font-size: 0.88rem !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* ── CLASSES PAGE: Tighter section padding on mobile ── */
+@media (max-width: 767px) {
+  .class-detail {
+    padding: 1.75rem 0 !important;
+    gap: 1.25rem !important;
+  }
+  /* Remove large aspect ratio on mobile — let image be natural height */
+  .class-detail-img {
+    aspect-ratio: 16/9 !important;
+  }
+  .class-detail-body h2 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem) !important;
+  }
+  .class-detail-body p {
+    font-size: 0.88rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .benefits-list {
+    gap: 0.35rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* ── ABOUT PAGE: Reduce about-hero-section padding on mobile ── */
+@media (max-width: 767px) {
+  .about-hero-section {
+    padding: calc(var(--nav-h) + 1.25rem) 1.1rem 0 !important;
+  }
+  .about-hero-text {
+    padding-bottom: 1.25rem !important;
+  }
+  .about-hero-img {
+    max-width: 280px !important;
+    aspect-ratio: 3/4 !important;
+  }
+  .about-story {
+    padding: 2.5rem 1.1rem !important;
+  }
+  .qualifications {
+    padding: 2.5rem 1.1rem !important;
+  }
+  .qual-grid {
+    gap: 0.65rem !important;
+  }
+}
+
+/* ── CONTACT PAGE: Tighter spacing on mobile ── */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 2rem 1.1rem 2.5rem !important;
+  }
+  .contact-inner {
+    gap: 1.75rem !important;
+  }
+  .contact-detail {
+    margin-bottom: 0.85rem !important;
+  }
+  .contact-cta-row {
+    gap: 0.5rem !important;
+  }
+  .contact-cta-row .btn {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    font-size: 0.75rem !important;
+    padding: 0.7rem 0.9rem !important;
+    justify-content: center !important;
+  }
+}
+
+/* ── GLOBAL: Reduce CTA band padding on mobile ── */
+@media (max-width: 767px) {
+  .cta-band {
+    padding: 3rem 1.1rem !important;
+  }
+  .cta-band h2 {
+    font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
+  }
+  .statement-band {
+    padding: 2.75rem 1.1rem !important;
+  }
+
+  /* Footer: reduce bottom padding on mobile (already has float buttons) */
+  .site-footer {
+    padding-bottom: 8rem !important;
+  }
+}
+
+/* ── TIMINGS TABS on slots page: full-width on mobile ── */
+@media (max-width: 767px) {
+  .timings-tabs {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: stretch !important;
+  }
+  .timings-tab {
+    flex: 1 !important;
+    text-align: center !important;
+    font-size: 0.78rem !important;
+    padding: 0.55rem 0.5rem !important;
+  }
+}
+
+/* ===== VIDEO SHOWCASE SECTION ===== */
+.video-showcase {
+  position: relative;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+.video-showcase-inner {
+  position: relative;
+  /* Desktop: cinematic wide letterbox — vertical video center-cropped */
+  height: clamp(420px, 56vw, 700px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .video-showcase-inner {
+    /* Mobile: taller box — shows more of the vertical frame */
+    height: min(85vw, 520px);
+    min-height: 320px;
+  }
+}
+
+.video-showcase-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+}
+
+/* Layered overlay: vignette + dim for text legibility */
+.video-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right,
+      rgba(28,36,36,0.75) 0%,
+      rgba(28,36,36,0.4) 30%,
+      rgba(28,36,36,0.4) 70%,
+      rgba(28,36,36,0.75) 100%
+    ),
+    linear-gradient(to bottom,
+      rgba(28,36,36,0.55) 0%,
+      rgba(28,36,36,0.15) 35%,
+      rgba(28,36,36,0.15) 65%,
+      rgba(28,36,36,0.65) 100%
+    );
+  z-index: 1;
+}
+
+.video-showcase-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 600px;
+}
+
+.video-showcase-label {
+  color: var(--teal);
+  display: block;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.2em;
+}
+
+.video-showcase-headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--off-white);
+  margin-bottom: 1.75rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 767px) {
+  .video-showcase-headline {
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+    margin-bottom: 1.25rem;
+  }
+  .video-showcase-content {
+    padding: 1.25rem 1rem;
+  }
+}

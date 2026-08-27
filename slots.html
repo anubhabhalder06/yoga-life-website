@@ -20,7 +20,7 @@
   <meta property="og:description" content="Explore yoga, Zumba, meditation and pranayam class timings in Baruipur. Beginner to advanced batches, morning and evening slots, online and offline options at Yoga Life.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/yoga-life-logo.png">
-  <link rel="stylesheet" href="css/style.css?v=2.4">
+  <link rel="stylesheet" href="css/style.css?v=2.6">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -63,11 +63,14 @@
     <p data-i18n="sp.sub">Find the perfect time for your practice, in-studio or online.</p>
   </div>
 </section>
-<section class="schedule-section" style="background: var(--off-white); padding-top: clamp(2rem, 5vw, 4rem);">
+<section class="schedule-section" style="background: var(--off-white); padding-top: clamp(2rem, 5vw, 4rem);" data-slots-section="true">
   <div class="container">
-    <div class="timings-tabs reveal" role="tablist" style="margin-top: 0; justify-content: center;">
-      <button class="timings-tab active" data-panel="cp-offline" role="tab" id="cp-tab-offline" aria-selected="true" data-i18n="sp.tab.off">Offline (In-Studio)</button>
-      <button class="timings-tab" data-panel="cp-online" role="tab" id="cp-tab-online" aria-selected="false" data-i18n="sp.tab.on">Online (Live)</button>
+    <!-- Sticky tab wrapper on mobile so tabs stay visible while scrolling through prices -->
+    <div class="slots-tabs-sticky">
+      <div class="timings-tabs" role="tablist" style="margin-top: 0; justify-content: center; width: 100%;">
+        <button class="timings-tab active" data-panel="cp-offline" role="tab" id="cp-tab-offline" aria-selected="true" data-i18n="sp.tab.off">Offline (In-Studio)</button>
+        <button class="timings-tab" data-panel="cp-online" role="tab" id="cp-tab-online" aria-selected="false" data-i18n="sp.tab.on">Online (Live)</button>
+      </div>
     </div>
 
     <!-- OFFLINE SECTION -->
