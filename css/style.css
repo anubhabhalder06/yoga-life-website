@@ -994,18 +994,46 @@ html[lang="bn"] .stat-label {
   }
 }
 
-/* ── INDEX PAGE: Cap hero video height on mobile ── */
+/* ── INDEX PAGE: Hero video removed from hero — wrapper CSS kept as no-op ── */
+/* .hero-video-wrapper removed from DOM; rules below are dormant */
 @media (max-width: 767px) {
   .hero-video-wrapper {
-    margin-top: 1.5rem !important;
-    max-height: 240px !important;
-    overflow: hidden !important;
-  }
-  .hero-video-wrapper video {
-    max-height: 240px !important;
-    object-fit: cover !important;
+    display: none;
   }
 }
+
+/* ── Gallery discovery button (dark section, ghost style) ── */
+.btn-outline-gallery {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--r-xl);
+  border: 1.5px solid rgba(250,248,244,0.3);
+  color: var(--off-white);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color var(--transition), background var(--transition), transform 150ms var(--ease-sharp);
+  white-space: nowrap;
+  min-height: 48px;
+  text-shadow: none;
+}
+.btn-outline-gallery:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(42,173,173,0.08);
+  transform: translateY(-2px);
+}
+.btn-outline-gallery svg {
+  flex-shrink: 0;
+}
+
 
 /* ── ALL INNER PAGES: Reduce page-hero padding on mobile ── */
 @media (max-width: 767px) {
